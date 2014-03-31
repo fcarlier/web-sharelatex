@@ -5,29 +5,29 @@
 				ul.nav
 					-if(session && session.user)
 						li
-							a(href='/project') Projects
+							a(href='project') Projects
 					-if(typeof(tenderUrl) != "undefined")
 						li
 							a.js-tender-widget(href='#') Support &amp; Feedback
 						li.nav-collapse
-							a(href='/help') Help
+							a(href='help') Help
 					li.nav-collapse#blogLink
-						a(href='/blog') Blog
+						a(href='blog') Blog
 					li.nav-collapse
-						a(href='/templates')#templatesLink LaTeX Templates
+						a(href='templates')#templatesLink LaTeX Templates
 					- if (settings.enableSubscriptions)
 						li.nav-collapse
-							a(href='/user/subscription/plans')#plansLink Plans &amp; Pricing
+							a(href='user/subscription/plans')#plansLink Plans &amp; Pricing
 					li.dropdown.nav-collapse
 						a.dropdown-toggle(href='#',data-toggle="dropdown") Info
 							b.caret
 						ul.dropdown-menu
 							li.nav-collapse
-								a(href="/learn")#learnLink LaTeX help guide
+								a(href="learn")#learnLink LaTeX help guide
 							li.nav-collapse
-								a(href='/resources')#resourcesLink LaTeX Resources
+								a(href='resources')#resourcesLink LaTeX Resources
 							li.nav-collapse
-								a(href='/about')#aboutUsLink About Us
+								a(href='about')#aboutUsLink About Us
 				ul.nav.pull-right
 					-if(session && session.user)
 						li.dropdown
@@ -35,14 +35,14 @@
 								b.caret
 							ul.dropdown-menu
 								li
-									a(href='/user/settings').userSettingsLink User Settings
+									a(href='user/settings').userSettingsLink User Settings
 								li
-									a(href='/user/subscription').subscriptionLink Subscription
+									a(href='user/subscription').subscriptionLink Subscription
 								li
-									a(href='/logout').logoutLink Logout
+									a(href='logout').logoutLink Logout
 					-else
 						li
-							a(href='/register') Register
+							a(href='register') Register
 						li 
-							a#loginLink(href='/login'+getRedirAsQueryString()) Login
+							a#loginLink(href='login'+getRedirAsQueryString()) Login
 
