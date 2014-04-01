@@ -9,9 +9,9 @@ fingerprints = {}
 Path = require 'path'
 jsPath =
 	if Settings.useMinifiedJs
-		"/minjs/"
+		"minjs/"
 	else
-		"/js/"
+		"js/"
 
 logger.log "Generating file fingerprints..."
 for path in [
@@ -21,10 +21,10 @@ for path in [
     "#{jsPath}list.js",
     "#{jsPath}libs/pdf.js",
     "#{jsPath}libs/pdf.worker.js",
-    "/stylesheets/mainStyle.css",
-    "/brand/plans.css"
+    "stylesheets/mainStyle.css",
+    "brand/plans.css"
 ]
-	filePath = Path.join __dirname, "../../../", "public#{path}"
+	filePath = Path.join __dirname, "../../../", "public/#{path}"
 	exists = fs.existsSync filePath
 	if exists
 		content = fs.readFileSync filePath

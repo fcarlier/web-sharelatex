@@ -40,15 +40,15 @@
 				ul.dropdown-menu
 					li
 						a.js-new-file(href="#")
-							img(src="/img/nide/doc.png")
+							img(src="img/nide/doc.png")
 							| New File
 					li
 						a.js-new-folder(href="#")
-							img(src="/img/nide/folder.png")
+							img(src="img/nide/folder.png")
 							| New Folder
 					li
 						a.js-upload-file(href="#")
-							img(src="/img/upload-file.png")
+							img(src="img/upload-file.png")
 							| Upload file(s)
 			.js-rename-btn.rename-btn
 				a(href="#", title="Rename")
@@ -73,8 +73,8 @@
 	script(type="text/template")#folderTemplate
 		.entity-list-item(class="entity-{{ type }}", entity-type="{{ type }}", id="{{ id }}")
 			.toggle.js-toggle
-				img(src="/img/nide/right-arrow.png").js-closed
-				img(src="/img/nide/down-arrow.png").js-open
+				img(src="img/nide/right-arrow.png").js-closed
+				img(src="img/nide/down-arrow.png").js-open
 			.clickable.js-clickable
 				i(class="sprite-{{ type }}")
 				span.name {{ name }}
@@ -158,7 +158,7 @@
 	script(type="text/template")#pdfSideBarLinkTemplate
 		ul
 			li.root.project#pdf(title='Show PDF', alt='pdf')
-				img(src='/img/pdf.png') 
+				img(src='img/pdf.png') 
 				span PDF
 	
 	script(type="text/template")#helpLinkTemplate
@@ -204,20 +204,20 @@
 
 	script(type="text/template")#outputFileLinkTemplate
 		li
-			a(href="/project/{{ project_id }}/output/{{ path }}", target="_blank") Download {{ name }}
+			a(href="project/{{ project_id }}/output/{{ path }}", target="_blank") Download {{ name }}
 
 	script(type="text/template")#pdfjsViewerTemplate
 		.pdfjs-viewer
 			.pdfjs-list-view
 			.btn-group
 				button.btn.btn-info.js-fit-height
-					img(src="/img/iconshock/fit-to-height.png")
+					img(src="img/iconshock/fit-to-height.png")
 				button.btn.btn-info.js-fit-width
-					img(src="/img/iconshock/fit-to-width.png")
+					img(src="img/iconshock/fit-to-width.png")
 				button.btn.btn-info.js-zoom-out
-					img(src="/img/iconshock/zoom-out.png")
+					img(src="img/iconshock/zoom-out.png")
 				button.btn.btn-info.js-zoom-in
-					img(src="/img/iconshock/zoom-in.png")
+					img(src="img/iconshock/zoom-in.png")
 			.progress.progress-info
 				.bar
 				span Loading

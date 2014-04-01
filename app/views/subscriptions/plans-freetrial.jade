@@ -46,14 +46,14 @@ mixin plan(plan, cssClass, monthly)
 
 
 			li.pricing-footer
-				- var href = '/user/subscription/new?planCode='+plan.planCode
+				- var href = 'user/subscription/new?planCode='+plan.planCode
 
 				- planIsPersonal = plan.planCode.indexOf("personal") != -1
 				- userNotLoggedIn = session && !session.user
 				-if(planIsPersonal)
-					- href = "/register"
+					- href = "register"
 				-else if(userNotLoggedIn)
-					- href = "/register?redir="+href
+					- href = "register?redir="+href
 				a.btn.btn-success(href='#{href}').sign_up_now	
 					| Sign Up Now!
 
@@ -159,10 +159,10 @@ block content
 						.alert.alert-info(style="color: #333")
 							h3 Want to use ShareLaTeX for free?
 							p Tell your university or department about our 
-								a(href="/university") site licenses 
+								a(href="university") site licenses 
 								| and use of all our
 								| features for free as a student or member of staff.
 								
 		include ../general/small-footer
-		link(rel='stylesheet', href='/brand/plans.css?fingerprint='+fingerprint('/brand/plans.css'))	
+		link(rel='stylesheet', href='brand/plans.css?fingerprint='+fingerprint('brand/plans.css'))	
 

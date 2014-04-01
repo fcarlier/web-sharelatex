@@ -26,16 +26,16 @@ block content
 						span.caret
 					ul.dropdown-menu.pull-right(role="menu")
 						li
-							a(href='/project/'+project_id+'/clone', data-csrf=csrfToken).cloneProject Clone Project
+							a(href='project/'+project_id+'/clone', data-csrf=csrfToken).cloneProject Clone Project
 						-if (project.accessLevel == "owner")
 							li
-								a(href='/project/'+project_id, data-name=project.name, data-id=project_id, data-csrf=csrfToken).deleteProject Delete Project
+								a(href='project/'+project_id, data-name=project.name, data-id=project_id, data-csrf=csrfToken).deleteProject Delete Project
 						-else
 							li
-								a(href='/project/'+project_id+'/leave', data-name=project.name, data-id=project._id, data-csrf=csrfToken).leaveProject Leave Project
+								a(href='project/'+project_id+'/leave', data-name=project.name, data-id=project._id, data-csrf=csrfToken).leaveProject Leave Project
 						li
-							a(href='/project/'+project._id+'/download/zip').downloadZip Download Zip
-				a.projectName(href="/project/#{project._id}") #{project.name}
+							a(href='project/'+project._id+'/download/zip').downloadZip Download Zip
+				a.projectName(href="project/#{project._id}") #{project.name}
 				.projectDetails
 					span Last modified on 
 					span.isoDate #{project.lastUpdated.toISOString()} 
@@ -76,17 +76,17 @@ block content
 								li
 									.normalText.menu-header From Template
 								li
-									a.normalText.menu-indent(href="/templates/cv") CV or Resume
+									a.normalText.menu-indent(href="templates/cv") CV or Resume
 								li
-									a.normalText.menu-indent(href="/templates/cover-letters") Cover Letter
+									a.normalText.menu-indent(href="templates/cover-letters") Cover Letter
 								li
-									a.normalText.menu-indent(href="/templates/journals") Journal Article
+									a.normalText.menu-indent(href="templates/journals") Journal Article
 								li
-									a.normalText.menu-indent(href="/templates/presentations") Presentation
+									a.normalText.menu-indent(href="templates/presentations") Presentation
 								li
-									a.normalText.menu-indent(href="/templates/thesis") Thesis
+									a.normalText.menu-indent(href="templates/thesis") Thesis
 								li
-									a.normalText.menu-indent(href="/templates/bibliographies") Bibliographies
+									a.normalText.menu-indent(href="templates/bibliographies") Bibliographies
 						h1 Projects
 			- if (projects.length > 0)
 				.row-fluid			
@@ -117,9 +117,9 @@ block content
 							.welcome
 								h2 Welcome to ShareLaTeX!
 								p New to LaTeX? Then have a look at our 
-									a(href="/templates") templates 
+									a(href="templates") templates 
 									| or 
-									a(href="/learn") help guides
+									a(href="learn") help guides
 									| .
 
 
@@ -130,14 +130,14 @@ block content
 						.alert.alert-info.alert-free-trial
 							p You are currently using a free trial which expires on #{freeTrial.expiresAt}. 
 							p
-								a(href="/user/subscription").btn.btn-primary Upgrade now 
+								a(href="user/subscription").btn.btn-primary Upgrade now 
 			if freeTrial && freeTrial.expired == true
 				.row-fluid
 					.span12
 						.alert.alert-danger.alert-free-trial
 							p Your free trial has expired! Upgrade now to continue using ShareLaTeX uninterrupted.
 							p 
-								a(href="/user/subscription").btn.btn-danger Upgrade now 
+								a(href="user/subscription").btn.btn-danger Upgrade now 
 
 		include ../general/small-footer
 	script(type="text/template")#tagTemplate

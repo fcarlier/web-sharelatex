@@ -43,22 +43,22 @@ block content
 
 							.tab-pane#dropboxSettings
 								.alert.alert-info 
-									a(href='/help/kb/dropbox-2') Read how dropbox works
+									a(href='help/kb/dropbox-2') Read how dropbox works
 								- if(!userHasDropboxFeature)
 									.alert.alert-info Dropbox sync is a premium feature &nbsp; &nbsp;
 										a.btn.btn-info(href='/user/subscription/plans') Upgrade
 								- else if(userIsRegisteredWithDropbox)
 									.alert.alert-success Account is linked!
 									row
-										a(href='/dropbox/unlink').btn Unlink Dropbox
+										a(href='dropbox/unlink').btn Unlink Dropbox
 								- else
-									a.btn.btn-info(href='/dropbox/beginAuth') Link to dropbox
+									a.btn.btn-info(href='dropbox/beginAuth') Link to dropbox
 
 
 							.tab-pane#editorSettings
 								.control-group
 									label(for='theme').control-label Theme &nbsp;
-										a(href='/themes') (preview)
+										a(href='themes') (preview)
 									.controls
 										select(name='theme')#theme
 											each theme in themes
@@ -156,7 +156,7 @@ block content
 
 	#changePasswordModal(style='display: none')
 		.modal
-			form#changePasswordForm(method="post", action="/user/password/update")
+			form#changePasswordForm(method="post", action="user/password/update")
 				.modal-header
 					h3 Change Password
 				.modal-body
