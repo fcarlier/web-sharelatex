@@ -127,7 +127,7 @@ module.exports =
 		req.session.destroy (err)->
 			if err
 				logger.err err: err, 'error destorying session'
-			res.redirect 'login'
+			res.redirect(Settings.base_href + 'login')
 
 	settings : (req, res)->
 		logger.log user: req.session.user, "loading settings page"

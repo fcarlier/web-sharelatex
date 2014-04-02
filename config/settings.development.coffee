@@ -167,8 +167,7 @@ module.exports =
 	# 
 	# ShareLaTeX's help desk is provided by tenderapp.com
 	# tenderUrl: ""
-	#
-
+	base_href: "http://...univ-lemans.fr/latex/"
 
 	# Production Settings
 	# -------------------
