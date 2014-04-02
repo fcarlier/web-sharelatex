@@ -27,7 +27,7 @@ module.exports =
 				setCompiler project._id, req.session.templateData.compiler, ->
 					fs.unlink dumpPath, ->
 					delete req.session.templateData
-					res.redirect "/project/#{project._id}"
+					res.redirect "project/#{project._id}"
 
 	publishProject: (user_id, project_id, callback)->
 		logger.log user_id:user_id, project_id:project_id, "reciving request to publish project as template"

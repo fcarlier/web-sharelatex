@@ -25,7 +25,7 @@ require [
 		submitHandler: (form)->
 			formData = $(form).serialize()
 			$.ajax
-				url: "/register",
+				url: "register",
 				type:'POST',
 				data: formData,
 				success: (data)->
@@ -34,7 +34,7 @@ require [
 						ga('send', 'event', 'register', 'failure', data.message)
 					else
 						ga('send', 'event', 'register', 'success')
-						window.location = data.redir || "/project"
+						window.location = data.redir || "project"
 				
 
 	$('#registerFormShort').validate shortRegisterFormRules
@@ -59,7 +59,7 @@ require [
 				e.preventDefault()
 				formData = $('form#changePasswordForm').serialize()
 				$.ajax
-					url: "/user/password/update"
+					url: "user/password/update"
 					type:'POST'
 					data: formData
 					success: (data)->
@@ -71,7 +71,7 @@ require [
 		event.preventDefault()
 		formData = $(this).serialize()
 		$.ajax
-			url: "/login"
+			url: "login"
 			type:'POST'
 			data: formData
 			error: (data)->
@@ -87,13 +87,13 @@ require [
 					ga('send', 'event', 'login', 'success')
 				else
 					ga('send', 'event', 'login', 'success')
-					window.location.href = '/project'
+					window.location.href = 'project'
 
 	$('form#passwordReset').submit (event)->
 		event.preventDefault()
 		formData = $(this).serialize()
 		$.ajax
-			url: "/user/passwordReset"
+			url: "user/passwordReset"
 			type:'POST'
 			data: formData
 			success: (data)->
@@ -102,12 +102,12 @@ require [
 				else if data.redir
 					window.location.href = data.redir
 				else
-					window.location.href = '/'
+					window.location.href = '.'
 
 
 	$('a#deleteUserAccount').click (e)->
 		redirect = ->
-			window.location.href = '/'
+			window.location.href = '.'
 
 
 		$modal = $('#deleteUserAccountModal')
@@ -130,7 +130,7 @@ require [
 			if val == "Delete"
 				$modal.modal('hide')
 				$.ajax
-					url: '/user'
+					url: 'user'
 					type: 'DELETE'
 					data:
 						_csrf: $(@).data("csrf")
@@ -144,7 +144,7 @@ require [
 
 	$('a#unsubscribeFromNewsletter').click (e)->
 		$.ajax
-			url: '/user/newsletter/unsubscribe'
+			url: 'user/newsletter/unsubscribe'
 			type: 'DELETE'
 			data:
 				_csrf: $(@).data("csrf")
@@ -171,7 +171,7 @@ require [
 		submitHandler: (form)->
 			formData = $(form).serialize()
 			$.ajax
-				url: '/user/settings'
+				url: 'user/settings'
 				type:'POST'
 				data: formData
 				success: (data)->

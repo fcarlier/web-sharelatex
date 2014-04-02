@@ -14,7 +14,7 @@ define [
 			return url
 
 		downloadUrl: ->
-			url = "/project/#{userSettings.project_id}/file/#{@id}"
+			url = "project/#{userSettings.project_id}/file/#{@id}"
 			return url
 
 

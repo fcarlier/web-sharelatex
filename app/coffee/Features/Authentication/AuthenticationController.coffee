@@ -11,7 +11,7 @@ module.exports = AuthenticationController =
 	login: (req, res, next = (error) ->) ->
 		email = req.body?.email?.toLowerCase()
 		password = req.body?.password
-		redir = Url.parse(req.body?.redir or "/project").path
+		redir = Url.parse(req.body?.redir or "project").path
 		LoginRateLimiter.processLoginRequest email, (err, isAllowed)->
 			if !isAllowed
 				logger.log email:email, "too many login requests"

@@ -8,9 +8,9 @@ module.exports =
 	index : (req,res)->
 		if req.session.user
 			if req.query.scribtex_path?
-				res.redirect "/project?scribtex_path=#{req.query.scribtex_path}"
+				res.redirect "project?scribtex_path=#{req.query.scribtex_path}"
 			else
-				res.redirect '/project'
+				res.redirect 'project'
 		else
 			res.render 'homepage/home',
 				title: 'ShareLaTeX.com'

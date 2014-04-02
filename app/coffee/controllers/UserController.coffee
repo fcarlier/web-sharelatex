@@ -44,7 +44,7 @@ module.exports =
 
 	apiRegister : (req, res, next = (error) ->)->
 		logger.log email: req.body.email, "attempted register"
-		redir = Url.parse(req.body.redir or "/project").path
+		redir = Url.parse(req.body.redir or "project").path
 		userRegistrationHandler.validateRegisterRequest req, (err, data)->
 			if err?
 				logger.log validation_error: err, "user validation error"
@@ -127,7 +127,7 @@ module.exports =
 		req.session.destroy (err)->
 			if err
 				logger.err err: err, 'error destorying session'
-			res.redirect '/login'
+			res.redirect 'login'
 
 	settings : (req, res)->
 		logger.log user: req.session.user, "loading settings page"
@@ -208,13 +208,13 @@ module.exports =
 		user_id = req.session.user._id
 		dropboxHandler.completeRegistration user_id, (err, success)->
 			return next(err) if err?
-			res.redirect('/user/settings#dropboxSettings')
+			res.redirect('user/settings#dropboxSettings')
 
 	unlinkDropbox: (req, res, next)->
 		user_id = req.session.user._id
 		dropboxHandler.unlinkAccount user_id, (err, success)->
 			return next(err) if err?
-			res.redirect('/user/settings#dropboxSettings')
+			res.redirect('user/settings#dropboxSettings')
 
 	deleteUser: (req, res)->
 		user_id = req.session.user._id

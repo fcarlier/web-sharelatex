@@ -129,7 +129,7 @@ require [
 					if data.redir?
 						window.location = data.redir
 					else if data.project_id?
-						window.location = '/project/'+data.project_id
+						window.location = 'project/'+data.project_id
 		$modal.on 'hide', ->
 			$confirm.off 'click'
 		$modal.find('.cancel').click (e)->
@@ -146,14 +146,14 @@ require [
 			$confirm.text("Creating...")
 			projectName = $modal.find('input').val()
 			$.ajax
-				url: '/project/new'
+				url: 'project/new'
 				type:'POST'
 				data:{projectName: projectName, template: template, _csrf: $(@).data("csrf")}
 				success: (data)->
 					if data.message
 						new Message data
 					else
-						window.location = '/project/'+data.project_id + (if fileToOpen? then ("#" + fileToOpen) else "")
+						window.location = 'project/'+data.project_id + (if fileToOpen? then ("#" + fileToOpen) else "")
 		$modal.on 'hide', ->
 			$confirm.off 'click'
 		$modal.find('.cancel').click (e)->
@@ -182,14 +182,14 @@ require [
 			validation:
 				allowedExtensions: ["zip"]
 			request:
-				endpoint: "/project/new/upload"
+				endpoint: "project/new/upload"
 				forceMultipart: true
 				params:
 					_csrf: $(@).data("csrf")
 			callbacks:
 				onComplete: (error, name, response)->
 					if response.project_id?
-						window.location = '/project/'+response.project_id
+						window.location = 'project/'+response.project_id
 			text:
 				waitingForResponse: "Creating project..."
 				failUpload: "Upload failed. Is it a valid zip file?"
